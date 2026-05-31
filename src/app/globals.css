@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-inter: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-space-grotesk: "Space Grotesk", "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(6, 182, 212, 0.24), transparent 34%),
+    radial-gradient(circle at 88% 14%, rgba(251, 113, 133, 0.24), transparent 32%),
+    linear-gradient(135deg, #fff7f3 0%, #f0fdfa 48%, #fdf2f8 100%);
+}
+
+body::selection {
+  background: rgba(251, 113, 133, 0.24);
+  color: #0f172a;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  user-select: none;
+}
+
+.animated-gradient-text {
+  background: linear-gradient(110deg, #0891b2, #fb7185, #8b5cf6, #06b6d4);
+  background-size: 240% 240%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 7s ease-in-out infinite;
+}
+
+.animated-aurora {
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(6, 182, 212, 0.18) 24%, transparent 46%),
+    linear-gradient(245deg, transparent 12%, rgba(251, 113, 133, 0.18) 38%, transparent 64%),
+    linear-gradient(180deg, rgba(255, 247, 243, 0), rgba(255, 247, 243, 0.92));
+  background-size: 180% 180%;
+  animation: aurora-shift 16s ease-in-out infinite alternate;
+}
+
+.animated-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(251, 113, 133, 0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
+  animation: grid-drift 22s linear infinite;
+}
+
+.scan-lines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 9px,
+    rgba(6, 182, 212, 0.045) 10px
+  );
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.8) 42%, transparent 62%);
+  opacity: 0;
+  transform: translateX(-120%);
+  transition: opacity 0.35s ease, transform 0.9s ease;
+  pointer-events: none;
+}
+
+.premium-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(251, 113, 133, 0.12);
+  background: radial-gradient(620px circle at var(--x, 50%) var(--y, 0%), rgba(251, 113, 133, 0.15), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+  transform: translateX(120%);
+}
+
+.premium-card:hover::after {
+  opacity: 1;
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.hero-photo-track {
+  animation: hero-photo-slide 22s linear infinite;
+}
+
+.hero-photo-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes aurora-shift {
+  0% {
+    background-position: 0% 20%;
+    filter: saturate(1);
+  }
+  100% {
+    background-position: 100% 80%;
+    filter: saturate(1.25);
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 72px 72px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-photo-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.glass-border {
+  position: relative;
+}
+
+.glass-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(6, 182, 212, 0.42), rgba(251, 113, 133, 0.28), rgba(139, 92, 246, 0.16));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
