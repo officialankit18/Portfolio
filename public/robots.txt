@@ -17,8 +17,7 @@ Disallow: /.env
 Disallow: /.git
 
 # Sitemap location
-Sitemap: https://ankityadav.dev/sitemap.xml
-Sitemap: https://ankityadav.dev/sitemap.xml
+Sitemap: https://www.ankityadav18.info/sitemap.xml
 
 # Crawl delay settings
 Crawl-delay: 1

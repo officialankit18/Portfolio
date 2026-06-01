@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ankityadav.dev"),
+  metadataBase: new URL("https://www.ankityadav18.info"),
   title: {
     default: "Ankit Yadav | Software Engineer & Full Stack Developer",
     template: "%s | Ankit Yadav"
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Ankit Yadav | Software Engineer & Full Stack Developer",
     description:
       "Real-world software, backend systems, AI-driven projects, research, hackathons, and freelance products.",
-    url: "https://ankityadav.dev",
+    url: "https://www.ankityadav18.info",
     siteName: "Ankit Yadav Portfolio",
     images: [{ url: "/main.jpeg", width: 1200, height: 1200, alt: "Ankit Yadav" }],
     locale: "en_IN",
@@ -62,8 +62,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ankit Yadav",
-    url: "https://ankityadav.dev",
-    image: "https://ankityadav.dev/main.jpeg",
+    url: "https://www.ankityadav18.info",
+    image: "https://www.ankityadav18.info/main.jpeg",
     jobTitle: "Software Engineer & Full Stack Developer",
     description: "Software engineering undergraduate building scalable web apps, backend systems, and AI-powered products",
     sameAs: [
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       "https://twitter.com/ankityadav18",
       "https://linkedin.com/in/ankit-yadav-dev"
     ],
-    email: "contact@ankityadav.dev",
+    email: "contact@ankityadav18.info",
     location: {
       "@type": "City",
       name: "Kanpur, India"
