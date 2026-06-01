@@ -58,8 +58,45 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Ankit Yadav",
+    url: "https://ankityadav.dev",
+    image: "https://ankityadav.dev/main.jpeg",
+    jobTitle: "Software Engineer & Full Stack Developer",
+    description: "Software engineering undergraduate building scalable web apps, backend systems, and AI-powered products",
+    sameAs: [
+      "https://github.com/officialankit18",
+      "https://twitter.com/ankityadav18",
+      "https://linkedin.com/in/ankit-yadav-dev"
+    ],
+    email: "contact@ankityadav.dev",
+    location: {
+      "@type": "City",
+      name: "Kanpur, India"
+    },
+    knowsAbout: [
+      "Web Development",
+      "Backend Development",
+      "Full Stack Development",
+      "React",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "AI/ML"
+    ]
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          suppressHydrationWarning
+        />
+      </head>
       <body className="bg-ink font-body text-slate-950 antialiased">
         {children}
       </body>

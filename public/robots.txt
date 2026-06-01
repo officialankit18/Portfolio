@@ -1,0 +1,24 @@
+# Allow all robots to crawl
+User-agent: *
+Allow: /
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /.git
+
+# Sitemap location
+Sitemap: https://ankityadav.dev/sitemap.xml
+Sitemap: https://ankityadav.dev/sitemap.xml
+
+# Crawl delay settings
+Crawl-delay: 1
